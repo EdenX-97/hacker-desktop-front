@@ -24,7 +24,7 @@ function NewsCard() {
     }, [dispatch, newsListRef]);
 
     // State and function to handle tabs switch
-    const [value, setValue] = React.useState("1");
+    const [value, setValue] = React.useState("0");
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
     };
@@ -34,36 +34,24 @@ function NewsCard() {
             <CardContent className="cardContent">
                 <TabContext value={value}>
                     <TabList onChange={handleChange} variant="scrollable">
-                        <Tab label="Hacker News" value="0" />
-                        <Tab label="Overflow News" value="1" />
-                        <Tab label="InfoQ News" value="2" />
+                        {
+                            Object.keys(newsList).map((providerName: string, index) => (
+                                <Tab key={index.toString()} label={providerName} value={index.toString()} />
+                            ))
+                        }
                     </TabList>
-
-
-
-                    {/*<TabPanel className="tabPanel" value="0">*/}
-                    {/*    {*/}
-                    {/*        hackerNewsList.map((data: {title: string; link: string}) => (*/}
-                    {/*            <News key={data.title} title={data.title} link={data.link}/>*/}
-                    {/*        ))*/}
-                    {/*    }*/}
-                    {/*</TabPanel>*/}
-
-                    {/*<TabPanel className="tabPanel" value="1">*/}
-                    {/*    {*/}
-                    {/*        overflowNewsList.map((data: {title: string; link: string}) => (*/}
-                    {/*            <News key={data.title} title={data.title} link={data.link}/>*/}
-                    {/*        ))*/}
-                    {/*    }*/}
-                    {/*</TabPanel>*/}
-
-                    {/*<TabPanel className="tabPanel" value="2">*/}
-                    {/*    {*/}
-                    {/*        infoQList.map((data: {title: string; link: string}) => (*/}
-                    {/*            <News key={data.title} title={data.title} link={data.link}/>*/}
-                    {/*        ))*/}
-                    {/*    }*/}
-                    {/*</TabPanel>*/}
+                    
+                    {
+                        Object.values(newsList).map((list: any[], index) => (
+                            <TabPanel key={index.toString()} className="tabPanel" value={index.toString()}>
+                                {
+                                    list.map((data: {title: string; link: string}, index) => (
+                                        <News key={index.toString()} title={data.title} link={data.link}/>
+                                    ))
+                                }
+                            </TabPanel>
+                        ))
+                    }
                 </TabContext>
             </CardContent>
         </Card>
