@@ -30,7 +30,6 @@ export const newsSlice = createSlice({
         builder
             .addCase(fetchNewsList.fulfilled, (state, action) => {
                 state.newsList = action.payload;
-                console.log(state.newsList)
             });
     },
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/home';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,11 +14,11 @@ function App() {
   return (
       <ThemeProvider theme={darkTheme}>
           <CssBaseline />
-          <BrowserRouter>
+          <HashRouter>
               <Routes>
                   <Route path="/" element={<Home />}></Route>
               </Routes>
-          </BrowserRouter>
+          </HashRouter>
       </ThemeProvider>
   );
 }

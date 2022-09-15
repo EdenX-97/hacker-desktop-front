@@ -40,7 +40,7 @@ function NewsCard() {
                             ))
                         }
                     </TabList>
-                    
+
                     {
                         Object.values(newsList).map((list: any[], index) => (
                             <TabPanel key={index.toString()} className="tabPanel" value={index.toString()}>

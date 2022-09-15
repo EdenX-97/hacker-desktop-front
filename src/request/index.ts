@@ -1,14 +1,15 @@
 import axios, { AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
 
 // Request url
-const baseURL = '/api';
+const baseURL = 'http://localhost:8777';
+// const baseURL = '/api';
 
 // Default timeout 3 seconds
 const timeout = 30000;
 
 const request = axios.create({
-    timeout,
-    baseURL
+    timeout: timeout,
+    baseURL: baseURL,
 });
 
 request.interceptors.request.use(config => {return config}, err => {console.log(err)})
