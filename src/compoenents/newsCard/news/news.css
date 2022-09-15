@@ -1,0 +1,11 @@
+.icon {
+    margin-right: 10px !important;
+}
+
+.typography {
+    margin-top: 2px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
+    width: 30vw;
+}

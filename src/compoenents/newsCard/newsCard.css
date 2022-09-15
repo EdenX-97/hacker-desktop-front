@@ -1,0 +1,33 @@
+.news {
+    width: 35vw;
+    height: 35vh;
+    margin: 0 !important;
+    backdrop-filter: blur(6px);
+    background: rgba(18, 18, 18, .5) !important;
+    border-radius: 10px !important;
+    overflow: auto !important;
+}
+
+.news::-webkit-scrollbar {
+    width: 8px;
+    appearance: none;
+}
+
+.news::-webkit-scrollbar-thumb {
+    border-radius: 32px;
+    border: 1px solid;
+    background-color: rgba(18, 18, 18, .5);
+}
+
+.cardContent {
+    padding: 0 !important;
+}
+
+.tabPanel {
+    padding: 10px 20px !important;
+}
+
+.MuiButtonBase-root, .MuiTabs-root {
+    height: 35px !important;
+    min-height: 35px !important;
+}
